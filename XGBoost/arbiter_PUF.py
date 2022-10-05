@@ -93,9 +93,10 @@ class arbiter_PUF:
         train_label = np.array(data_label)
         
         # for pypuf lr2021 attack
-        attack_info = np.array(data)
+        # attack_info = np.array(data)
         
-        return train_data, train_label, attack_info
+        return train_data, train_label
+        # return train_data, train_label, attack_info
     
     
     def load_data_2021(self, stages, data_num, puf_seed, cus_seed, base, layer_ouput):
@@ -165,7 +166,7 @@ class arbiter_PUF:
         train_label = np.array(data_label)
         
         # for pypuf lr2021 attack
-        attack_info = np.array(data)
-        
+        # attack_info = np.array(data)
+        # return train_data, train_label
         return train_data, train_label, attack_info
         

@@ -44,9 +44,9 @@ clf_result = pd.DataFrame({'puf_seed' : [],
                            'Testing time' : []
                            })'''
 
-PUF_types = [    'APUF' #'APUF','2 XOR-APUF','3 XOR-APUF','4 XOR-APUF','5 XOR-APUF','6 XOR-APUF','FF-2-XOR-APUF','FF-3-XOR-APUF',
+PUF_types = [    #'APUF' #'APUF','2 XOR-APUF','3 XOR-APUF','4 XOR-APUF','5 XOR-APUF','6 XOR-APUF','FF-2-XOR-APUF','FF-3-XOR-APUF',
                  #'FF-4-XOR-APUF','FF-5-XOR-APUF','FF-6-XOR-APUF',
-                 #'Generic framework(1,1,1)','Generic framework(2,2,2)','Generic framework(3,3,3)',
+                 'Generic framework(1,1,1)'#'Generic framework(2,2,2)','Generic framework(3,3,3)',
                  #'Generic framework(4,4,4)','Generic framework(5,5,5)','Generic framework(6,6,6)','Generic framework(10,10,10)'
                  #,'Generic framework(20,20,20)'
                  #'Generic framework(2,0,0)','Generic framework(3,0,0)','Generic framework(4,0,0)','Generic framework(5,0,0)',
@@ -142,7 +142,7 @@ for PUF_type in PUF_types:
             #data_unseen, data_label_unseen = feedforward_puf.load_data(68, 5000, 6, f1, d1, 256, 22, 77, 89, 90, 367, 334, 0)
         elif PUF_type == 'Generic framework(1,1,1)':
             #general_model = general_model()
-            data, data_label = general_model.load_data(1, 1, 1, 0, 0, int(np.floor(5000/1)))
+            data, data_label = general_model.load_data(1, 1, 1, 0, 0, int(np.floor(5000/1)),50000)
             #data, data_label = shuffle(data, data_label)
             
             #general_model2 = general_model2()
@@ -264,6 +264,8 @@ for PUF_type in PUF_types:
         
         data, data_unseen, data_label, data_label_unseen = train_test_split(data, data_label, test_size=.20)
         
+        # print("data", data)
+        # print("data_size", data.shape())
         
         #ML = LogisticRegression()
         #ML = DecisionTreeClassifier(criterion='entropy', max_depth=8)
@@ -319,4 +321,4 @@ for PUF_type in PUF_types:
                                          },  ignore_index=True)
         
         #clf_result.to_csv(r'C:\Users\weber\OneDrive\Desktop\Dissertation\XGBoost\{}.csv'.format(puf_seed))
-clf_result.to_csv(r'C:\Users\weber\OneDrive\Desktop\Dissertation\XGBoost\SVM_all_PUF.csv')
+clf_result.to_csv(r'D:\codes\Dissertation\XGBoost\SVM_all_PUF.csv')

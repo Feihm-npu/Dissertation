@@ -1,0 +1,2 @@
+,PUF type,CRPs number,Test split Accuracy,Test split F1,Training time,Testing time
+0,APUF,5000.0,99.5,99.50544015825915,0 days 00:00:04.729001,0 days 00:00:01.197999
